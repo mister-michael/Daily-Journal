@@ -1,6 +1,9 @@
+
+
 fieldset {
     display: flex;
     flex-direction: column;
+    align-content: center;
 }
 
 #conceptsCovered {
@@ -13,3 +16,23 @@ fieldset {
     height: 150px;
 }
 
+form {
+    width;: 50%;
+    margin: 0% 5%;
+}
+
+input[type=text] {
+    /* border: 2px solid black; */
+    border-radius: 4px;
+  }
+  input[type=text]:focus {
+    background-color: lightgray;
+  }
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    margin: -100&;
+    
+}
