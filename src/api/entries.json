@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "date": "01/21/2020",
+      "concept": "JSON",
+      "content": "We learned about JSON files",
+      "mood": "sublime"
+    },
+    {
+      "date": "01/22/2020",
+      "concept": "API",
+      "content": "We learned about fetch from API",
+      "mood": "sublime",
+      "id": 2
+    }
+  ]
+}

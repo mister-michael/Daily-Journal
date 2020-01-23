@@ -1,16 +1,16 @@
-const journalEntry =
-{
-    date: "01/21/2020",
-    concept: "JSON",
-    content: "We learned about JSON files",
-    mood: "sublime",
-}
+// const journalEntry =
+// {
+//     date: "01/21/2020",
+//     concept: "JSON",
+//     content: "We learned about JSON files",
+//     mood: "sublime",
+// }
 
-let journalEntries = [];
+// let journalEntries = [];
 
-journalEntries.push(journalEntry);
+// journalEntries.push(journalEntry);
 
-const makeJournalEntryComponent = (journalEntry) => {
+const makeHTML = (journalEntry) => {
     return `
    <h2>${journalEntry.concept}</h2>
    <div>${journalEntry.date}</div>
@@ -19,14 +19,21 @@ const makeJournalEntryComponent = (journalEntry) => {
    `
 };
 
-const renderJournalEntries = (entries) => {
+// const renderJournalEntries = (entries) => {
     const targetLocation = document.querySelector(".entryLog");
-    for (let i = 0; i < entries.length; i++) {
-        const entry = entries[i];
-        targetLocation.innerHTML += makeJournalEntryComponent(entry);
-    }
-}
+//     for (let i = 0; i < entries.length; i++) {
+//         const entry = entries[i];
+//         targetLocation.innerHTML += makeJournalEntryComponent(entry);
+//     }
+// }
 
-renderJournalEntries(journalEntries);
+// renderJournalEntries(journalEntries);
 
-console.log(journalEntries)
+// console.log(journalEntries)
+
+fetch("http://localhost:8088/entries")
+    .then(responseFromApi => responseFromApi.json())
+    .then(parsedDataFromApi => {
+        console.table(parsedDataFromApi)
+        parsedDataFromApi.forEach(entry => {
+            targetLocation.innerHTML += makeHTML(entry)})})
