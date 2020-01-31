@@ -7,15 +7,4 @@ const makeHTML = (journalEntry) => {
    `
 };
 
-
-
-
-// const makeHTML = (journalEntry) => {
-//     return `
-//    <h2>${journalEntry.concept}</h2>
-//    <div>${journalEntry.date}</div>
-//    <article>${journalEntry.content}</article>
-//    <div>${journalEntry.mood}</div>
-//    `
-// };
-
+export default makeHTML;
