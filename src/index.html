@@ -15,39 +15,38 @@
 
     <form action="">
         <fieldset>
-            <label for="journalDate">Date of Entry</label>
-            <input type="date" name="journalDate" id="journalDate">
+            <label id="date--input" for="journalDate">Date of Entry</label>
+            <input  type="date" name="journalDate" id="journalDate">
         </fieldset>
 
 
 
         <fieldset>
-            <label for="conceptsCovered">Concepts Covered</label>
+            <label id="concepts--input "for="conceptsCovered">Concepts Covered</label>
             <input type="text" name="conceptsCovered" id="conceptsCovered">
         </fieldset>
 
 
 
         <fieldset>
-            <label for="journalEntry">Journal Entry</label>
+            <label id="jEntry--input" for="journalEntry">Journal Entry</label>
             <input type="text" name="journalEntry" id="journalEntry">
         </fieldset>
 
         <fieldset>
             <label for="mood">Mood for the Day</label>
-            <input list="mood" name="mood" id="mood">
-
-            <datalist id="mood">
-                <option value="Stoked">
-                <option value="Juiced">
-                <option value="Ok">
-                <option value="Bummed">
-                <option value="Nihilistic">
-            </datalist>
+            <select id="mood">
+                <option value=""></option>
+                <option value="Stoked">Stoked!</option>
+                <option value="Juiced">Juiced!</option>
+                <option value="Ok">Ok.</option>
+                <option value="Bummed">Bummed!</option>
+                <option value="Nihilistic">Nihilistic!</option>
+                </select>
         </fieldset>
 
         <fieldset>
-            <input type="submit" value="Make it Happen">
+            <button type="button" id="submit--button">Emboss Eternity</button>
         </fieldset>
     </form>
 
