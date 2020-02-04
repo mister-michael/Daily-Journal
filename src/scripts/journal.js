@@ -21,7 +21,7 @@ targetSubmitButton.addEventListener("click", () => {
     if (targetDateInput.value === "") {
         alert("you forgot the date, dummy")
     } else {
-        dateOutput = targetDateInput.value;
+        dateOutput = targetDateInput.value
     }
 
     if (targetConceptsInput.value === "") {
@@ -44,20 +44,30 @@ targetSubmitButton.addEventListener("click", () => {
 
     console.log(dateOutput, conceptsOutput, journalEntryOutput, moodOutput)
 
-   
+    const newJournalEntry = {
+    
+            
+                "date": dateOutput,
+                "concept": conceptsOutput,
+                "content": journalEntryOutput,
+                "mood": moodOutput
+    }
 
-    const saveJournalEntry = (newJournalEntry) => {
+    console.log(newJournalEntry)
 
-        fetch(url, {
+    fetch("http://localhost:8088/entries", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(date: ${dateOutput}, concept: ${conceptsOutput}, content: ${journalEntryOutput}, mood: ${moodOutput})
+            body: JSON.stringify(newJournalEntry)
         })
-        
-    }
+        .then(resp => resp.json())
 })
+
+
+
+
 
 
 
