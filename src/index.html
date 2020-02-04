@@ -26,8 +26,15 @@
             <input type="text" name="conceptsCovered" id="conceptsCovered">
         </fieldset>
 
-        <fieldset id="mood-select-group">
-            <label>Mood</label>
+
+
+        <fieldset>
+            <label id="jEntry--input" for="journalEntry">Journal Entry</label>
+            <input type="text" name="journalEntry" id="journalEntry">
+        </fieldset>
+
+        <fieldset>
+            <label for="mood">Mood for the Day</label>
             <select id="mood">
                 <option value=""></option>
                 <option value="Stoked">Stoked!</option>
@@ -38,31 +45,23 @@
             </select>
         </fieldset>
 
-        <fieldset>
-            <label id="jEntry--input" for="journalEntry">Journal Entry</label>
-            <input type="text" name="journalEntry" id="journalEntry">
-        </fieldset>
-
-
-        <fieldset id="radio-button-group">
-            <legend>
-                <h1>Mood</h1>
-            </legend>
+        <fieldset id="radio-button-group" class="filter-mood">
+            <legend>Filter by Mood</legend>
 
             <label>Juiced!</label>
             <input name="moodFieldset" type="radio" id="juiced">
 
             <label>Stoked!</label>
-            <input name="moodFieldset" type="radio" id="juiced">
+            <input name="moodFieldset" type="radio" id="stoked">
 
             <label>Ok...</label>
-            <input name="moodFieldset" type="radio" id="juiced">
+            <input name="moodFieldset" type="radio" id="ok">
 
             <label>Bummed!</label>
-            <input name="moodFieldset" type="radio" id="juiced">
+            <input name="moodFieldset" type="radio" id="bummed">
 
             <label>Nhilistic!</label>
-            <input name="moodFieldset" type="radio" id="juiced">
+            <input name="moodFieldset" type="radio" id="nhilistic">
         </fieldset>
 
 

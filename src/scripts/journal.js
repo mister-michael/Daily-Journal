@@ -63,7 +63,12 @@ targetSubmitButton.addEventListener("click", () => {
             body: JSON.stringify(newJournalEntry)
         })
         .then(resp => resp.json())
+        API.getJournalEntries().then(renderHTML)
 })
+
+addMoodFilterClickeEventListener = (evt) => {
+
+}
 
 
 
