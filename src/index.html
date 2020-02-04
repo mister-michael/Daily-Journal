@@ -16,25 +16,18 @@
     <form action="">
         <fieldset>
             <label id="date--input" for="journalDate">Date of Entry</label>
-            <input  type="date" name="journalDate" id="journalDate">
+            <input type="date" name="journalDate" id="journalDate">
         </fieldset>
 
 
 
         <fieldset>
-            <label id="concepts--input "for="conceptsCovered">Concepts Covered</label>
+            <label id="concepts--input " for="conceptsCovered">Concepts Covered</label>
             <input type="text" name="conceptsCovered" id="conceptsCovered">
         </fieldset>
 
-
-
-        <fieldset>
-            <label id="jEntry--input" for="journalEntry">Journal Entry</label>
-            <input type="text" name="journalEntry" id="journalEntry">
-        </fieldset>
-
-        <fieldset>
-            <label for="mood">Mood for the Day</label>
+        <fieldset id="mood-select-group">
+            <label>Mood</label>
             <select id="mood">
                 <option value=""></option>
                 <option value="Stoked">Stoked!</option>
@@ -42,8 +35,40 @@
                 <option value="Ok">Ok.</option>
                 <option value="Bummed">Bummed!</option>
                 <option value="Nihilistic">Nihilistic!</option>
-                </select>
+            </select>
         </fieldset>
+
+        <fieldset>
+            <label id="jEntry--input" for="journalEntry">Journal Entry</label>
+            <input type="text" name="journalEntry" id="journalEntry">
+        </fieldset>
+
+
+        <fieldset id="radio-button-group">
+            <legend>
+                <h1>Mood</h1>
+            </legend>
+
+            <label>Juiced!</label>
+            <input name="moodFieldset" type="radio" id="juiced">
+
+            <label>Stoked!</label>
+            <input name="moodFieldset" type="radio" id="juiced">
+
+            <label>Ok...</label>
+            <input name="moodFieldset" type="radio" id="juiced">
+
+            <label>Bummed!</label>
+            <input name="moodFieldset" type="radio" id="juiced">
+
+            <label>Nhilistic!</label>
+            <input name="moodFieldset" type="radio" id="juiced">
+        </fieldset>
+
+
+
+
+
 
         <fieldset>
             <button type="button" id="submit--button">Emboss Eternity</button>
@@ -51,13 +76,13 @@
     </form>
 
     <article class="entryLog">
-        
+
     </article>
 
-    
-    
-    
-    
+
+
+
+
     <script type="module" src="scripts/journal.js"></script>
 </body>
 
