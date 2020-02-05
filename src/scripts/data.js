@@ -15,6 +15,11 @@ const API = {
             },
             body: JSON.stringify(entry)
         })
+    },
+    deleteEntry(buttonId) {
+        return fetch(`http://localhost:8088/entries/${buttonId}`, {
+            method: "DELETE"
+        })
     }
 };
 

@@ -4,6 +4,7 @@ import events from "./addEventListener.js"
 
 events.addEventListener();
 events.addFilterListener();
+events.addDeleteButtonEL();
 
 API.getJournalEntries().then(renderHTML)
 

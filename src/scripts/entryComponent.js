@@ -6,6 +6,7 @@ const makeHTML = (journalEntry) => {
     <div>${journalEntry.date}</div>
     <article>${journalEntry.content}</article>
     <div>"${journalEntry.mood}!"</div>
+    <button id="button--${journalEntry.id}" class="deleteButton">Delete</button>
    `
 };
 

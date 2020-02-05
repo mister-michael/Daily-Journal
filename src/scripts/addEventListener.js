@@ -61,6 +61,29 @@ const events = {
                     })
             })
         })
+    },
+    addDeleteButtonEL() {
+        //target the dom location for all printed entries
+        const targetDom = document.querySelector(".entryLog");
+
+        //add event listener to targetDom
+        targetDom.addEventListener("click", event => {
+
+            //target ids that start with button-- (which are the buttons) by setting that condition
+            if (event.target.id.startsWith("button--")) {
+                //denote the entry to delete by targeting the id of the entry which meets the condition
+                //split button--# into array [button, #]
+                //specify the # by denoting array position [1]
+                const entryToDelete = event.target.id.split("--")[1]
+
+                //fetch delete method which takes an index as its parameter removes that entry from .json
+                //the index we isolated with the split
+                API.deleteEntry(entryToDelete)
+                    //fetch the updated .json and render to the DOM
+                    .then(API.getJournalEntries)
+                    .then(renderHTML)
+            }
+        })
     }
 }
 
