@@ -1,46 +1,11 @@
 {
   "entries": [
     {
-      "id": 1,
-      "date": "01/21/2020",
-      "concept": "JSON",
-      "content": "We learned about JSON files",
-      "mood": "Juiced!"
-    },
-    {
-      "date": "01/22/2020",
-      "concept": "API",
-      "content": "We learned about fetch from API",
-      "mood": "Stoked!",
-      "id": 2
-    },
-    {
-      "date": "2020-02-04",
-      "concept": "stuff",
-      "content": "kjhkjhlkjh",
-      "mood": "Ok",
-      "id": 3
-    },
-    {
       "date": "2020-02-05",
-      "concept": "d",
-      "content": "yup",
-      "mood": "Bummed",
-      "id": 4
-    },
-    {
-      "date": "2020-02-12",
-      "concept": "asd",
-      "content": "kjhkjhlkjh",
-      "mood": "Nihilistic",
-      "id": 5
-    },
-    {
-      "date": "2020-02-20",
-      "concept": "d",
-      "content": "asdf",
-      "mood": "Nihilistic",
-      "id": 6
+      "concept": "stuff",
+      "content": "asasda",
+      "mood": "Stoked",
+      "id": 1
     }
   ]
 }
