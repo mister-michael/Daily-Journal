@@ -9,5 +9,4 @@ const makeHTML = (journalEntry) => {
    `
 };
 
-
 export default makeHTML;
