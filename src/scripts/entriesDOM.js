@@ -10,7 +10,7 @@ const renderHTML = (entry) => {
 
     //entry is the fetched .json array, element is each object in the array, for each element we call the makeHTML function and print to dom
     entry.forEach(element => {
-        targetLocation.innerHTML += makeHTML(element)    
+        targetLocation.innerHTML += makeHTML(element)
     });
 }
 

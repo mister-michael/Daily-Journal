@@ -2,7 +2,7 @@ import API from "./data.js";
 import renderHTML from "./entriesDOM.js"
 
 const events = {
-    addEventListener() {
+    addSubmitListener() {
         //target submit button
         const targetSubmitButton = document.getElementById("submit--button");
 
@@ -62,7 +62,7 @@ const events = {
             })
         })
     },
-    addDeleteButtonEL() {
+    addDeleteButtonListener() {
         //target the dom location for all printed entries
         const targetDom = document.querySelector(".entryLog");
 
