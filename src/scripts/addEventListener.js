@@ -2,9 +2,30 @@ import API from "./data.js";
 import renderHTML from "./entriesDOM.js"
 
 const events = {
+    updateFormFields(journalEntryId) {
+        const hiddenEntryIdInput = document.querySelector("#entryId");
+        const targetDateInput = document.getElementById("journalDate");
+        const targetConceptsInput = document.getElementById("conceptsCovered");
+        const targetJournalEntryInput = document.getElementById("journalEntry");
+        const targetMoodInput = document.getElementById("mood");
+
+        fetch(`http://localhost:8088/entries/${journalEntryId}`)
+            .then(resp => resp.json())
+            .then(entry => {
+
+                hiddenEntryIdInput.value = entry.id
+                targetDateInput.value = entry.date
+                targetConceptsInput.value = entry.concept
+                targetJournalEntryInput.value = entry.content
+                targetMoodInput.value = entry.mood
+
+            })
+    },
     addSubmitListener() {
         //target submit button
+
         const targetSubmitButton = document.getElementById("submit--button");
+
 
         targetSubmitButton.addEventListener("click", () => {
 
@@ -13,29 +34,37 @@ const events = {
             const targetJournalEntryInput = document.getElementById("journalEntry");
             const targetMoodInput = document.getElementById("mood");
 
+            const hiddenEntryIdInput = document.getElementById("entryId")
+
+            const journalEntry = {
+                "date": targetDateInput.value,
+                "concept": targetConceptsInput.value,
+                "content": targetJournalEntryInput.value,
+                "mood": targetMoodInput.value
+            }
             //if else if conditional to alert if an entry field is left blank or run the api.savejournalentry method which posts to json and writes to dom
-
-            if (targetDateInput.value === "") {
-                alert("you forgot the date, dummy")
-            } else if (targetConceptsInput.value === "") {
-                alert("you forgot the concept, dummy")
-            } else if (targetJournalEntryInput.value === "") {
-                alert("you forgot the entry, dummy")
-            } else if (targetMoodInput.value === "") {
-                alert("you forgot your mood, dummy")
+            if (hiddenEntryIdInput !== "") {
+                journalEntry.id = parseInt(hiddenEntryIdInput.value);
+                API.updateEntry(journalEntry)
+                    .then(() => {
+                        API.getJournalEntries()
+                            .then(renderHTML)
+                    })
             } else {
+                if (targetDateInput.value === "") {
+                    alert("you forgot the date, dummy")
+                } else if (targetConceptsInput.value === "") {
+                    alert("you forgot the concept, dummy")
+                } else if (targetJournalEntryInput.value === "") {
+                    alert("you forgot the entry, dummy")
+                } else if (targetMoodInput.value === "") {
+                    alert("you forgot your mood, dummy")
+                } else {
+                    // newJournalEntry is the object which will be posted to entries.json
+                    //posts created entry to .json then re-print the entire dom from json which will include the new entry
+                    API.saveJournalEntry(journalEntry).then(() => API.getJournalEntries().then(renderHTML))
 
-                // newJournalEntry is the object which will be posted to entries.json
-                const newJournalEntry = {
-
-                    "date": targetDateInput.value,
-                    "concept": targetConceptsInput.value,
-                    "content": targetJournalEntryInput.value,
-                    "mood": targetMoodInput.value
                 }
-
-                //posts created entry to .json then re-print the entire dom from json which will include the new entry
-                API.saveJournalEntry(newJournalEntry).then(() => API.getJournalEntries().then(renderHTML))
             }
         })
     },
@@ -70,7 +99,7 @@ const events = {
         targetDom.addEventListener("click", event => {
 
             //target ids that start with button-- (which are the buttons) by setting that condition
-            if (event.target.id.startsWith("button--")) {
+            if (event.target.id.startsWith("deleteButton--")) {
                 //denote the entry to delete by targeting the id of the entry which meets the condition
                 //split button--# into array [button, #]
                 //specify the # by denoting array position [1]
@@ -83,6 +112,20 @@ const events = {
                     .then(API.getJournalEntries)
                     .then(renderHTML)
             }
+        })
+    },
+    addEditButtonListener() {
+
+        const targetDom = document.querySelector(".entryLog")
+        // <button id="editButton--${journalEntry.id}" class="editButton">Edit</button>
+        targetDom.addEventListener("click", event => {
+
+            if (event.target.id.startsWith("editButton--")) {
+                const journalEntryToEdit = event.target.id.split("--")[1];
+
+                events.updateFormFields(journalEntryToEdit)
+            }
+
         })
     }
 }

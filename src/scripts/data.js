@@ -20,7 +20,17 @@ const API = {
         return fetch(`http://localhost:8088/entries/${buttonId}`, {
             method: "DELETE"
         })
-    }
+    },
+    updateEntry(journalEntry) {
+        return fetch(`${url}/${journalEntry.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(journalEntry)
+        })
+    },
 };
+
 
 export default API;

@@ -14,19 +14,16 @@
     <h2>Daily Journal</h2>
 
     <form action="">
+        <input type="hidden" id="entryId" value="" />
         <fieldset>
             <label id="date--input" for="journalDate">Date of Entry</label>
             <input type="date" name="journalDate" id="journalDate">
         </fieldset>
 
-
-
         <fieldset>
             <label id="concepts--input " for="conceptsCovered">Concepts Covered</label>
             <input type="text" name="conceptsCovered" id="conceptsCovered">
         </fieldset>
-
-
 
         <fieldset>
             <label id="jEntry--input" for="journalEntry">Journal Entry</label>
@@ -64,18 +61,13 @@
             <input name="moodFieldset" type="radio" value="Nihilistic">
         </fieldset>
 
-
-
-
-
-
         <fieldset>
             <button type="button" id="submit--button">Emboss Eternity</button>
         </fieldset>
     </form>
 
     <article class="entryLog">
-
+        <!-- printed entries appear here -->
     </article>
 
 
