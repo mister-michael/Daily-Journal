@@ -1,9 +1,10 @@
-const url = "http://localhost:8088/entries"
+const baseUrl = "http://localhost:8088/entries";
+const urlExpanded = "http://localhost:8088/entries?_expand=mood";
 
 const API = {
     getJournalEntries() {
 
-        return fetch(url)
+        return fetch(urlExpanded)
             .then(responseFromApi => responseFromApi.json())
     },
     saveJournalEntry(entry) {
@@ -22,7 +23,7 @@ const API = {
         })
     },
     updateEntry(journalEntry) {
-        return fetch(`${url}/${journalEntry.id}`, {
+        return fetch(`${baseUrl}/${journalEntry.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -31,6 +32,10 @@ const API = {
         })
     },
 };
+
+// const targetHidden = document.getElementById(entryId)
+// const hiddenValue = targetHidden.value
+// console.log(hiddenValue)
 
 
 export default API;

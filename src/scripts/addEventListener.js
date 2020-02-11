@@ -51,15 +51,16 @@ const events = {
             const targetMoodInput = document.getElementById("mood");
 
             const hiddenEntryIdInput = document.getElementById("entryId")
-
+            const moodIdCreator = parseInt(targetMoodInput.value)
+            console.log(moodIdCreator, "moodIdCreator")
             const journalEntry = {
                 "date": targetDateInput.value,
                 "concept": targetConceptsInput.value,
                 "content": targetJournalEntryInput.value,
-                "mood": targetMoodInput.value
+                "moodId": moodIdCreator
             }
             //if else if conditional to alert if an entry field is left blank or run the api.savejournalentry method which posts to json and writes to dom
-            if (hiddenEntryIdInput !== "") {
+            if (hiddenEntryIdInput.value !== "") {
                 journalEntry.id = parseInt(hiddenEntryIdInput.value);
                 API.updateEntry(journalEntry)
                     .then(() => {

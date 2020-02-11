@@ -2,52 +2,74 @@
   "entries": [
     {
       "date": "2020-02-02",
-      "concept": "1 covered",
-      "content": "did i? i did!!! but did it clear? it did!!!",
-      "mood": "Stoked",
-      "id": 2
-    },
-    {
-      "date": "2020-02-02",
       "concept": "2 covered javascript",
       "content": "2 Entry javascript",
-      "mood": "Stoked",
+      "moodId": 2,
       "id": 3
     },
     {
       "date": "2020-02-03",
       "concept": "3 covered",
       "content": "3 Entry json",
-      "mood": "Ok",
+      "moodId": 3,
       "id": 4
     },
     {
       "date": "2020-02-03",
       "concept": "4 covered",
       "content": "4 Entry",
-      "mood": "Bummed",
+      "moodId": 4,
       "id": 5
     },
     {
       "date": "2020-02-03",
       "concept": "5 covered",
       "content": "5 Entry",
-      "mood": "Nihilistic",
+      "moodId": 5,
       "id": 6
     },
     {
       "date": "2020-02-07",
       "concept": "6 covered",
       "content": "6 Entry",
-      "mood": "Nihilistic",
+      "moodId": 5,
       "id": 7
     },
     {
       "date": "2020-02-07",
       "concept": "7 covered",
       "content": "7 Entry",
-      "mood": "Juiced",
+      "moodId": 1,
       "id": 8
+    },
+    {
+      "date": "2020-02-11",
+      "concept": "stuff",
+      "content": "asasda",
+      "moodId": 3,
+      "id": 9
+    }
+  ],
+  "moods": [
+    {
+      "id": 1,
+      "mood": "Juiced!"
+    },
+    {
+      "id": 2,
+      "mood": "Stoked!"
+    },
+    {
+      "id": 3,
+      "mood": "Ok."
+    },
+    {
+      "id": 4,
+      "mood": "Bummed!"
+    },
+    {
+      "id": 5,
+      "mood": "Nihilistic!"
     }
   ]
 }
