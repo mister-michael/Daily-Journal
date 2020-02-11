@@ -35,3 +35,14 @@ input[type=text] {
     font-size: 100px;
     margin-bottom: 5%;   
 }
+
+#filterAndSearch {
+    display: flex;
+    flex-basis: fill;
+    justify-content: center;
+}
+
+#radio-button-group {
+    display: inline;
+}
+

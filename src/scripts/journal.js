@@ -6,6 +6,6 @@ events.addSubmitListener();
 events.addFilterListener();
 events.addDeleteButtonListener();
 events.addEditButtonListener();
-
+events.searchFilter();
 
 API.getJournalEntries().then(renderHTML)

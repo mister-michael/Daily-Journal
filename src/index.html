@@ -42,29 +42,36 @@
             </select>
         </fieldset>
 
-        <fieldset id="radio-button-group" class="filter-by-mood">
-            <legend>Filter by Mood</legend>
+        <div id="filterAndSearch" class="filterAndSearch">
+            <fieldset id="radio-button-group" class="filter-by-mood">
+                <legend>Filter by Mood</legend>
 
-            <label>Juiced!</label>
-            <input name="moodFieldset" type="radio" value="Juiced">
+                <label>Juiced!</label>
+                <input name="moodFieldset" type="radio" value="Juiced">
 
-            <label>Stoked!</label>
-            <input name="moodFieldset" type="radio" value="Stoked">
+                <label>Stoked!</label>
+                <input name="moodFieldset" type="radio" value="Stoked">
 
-            <label>Ok...</label>
-            <input name="moodFieldset" type="radio" value="Ok">
+                <label>Ok...</label>
+                <input name="moodFieldset" type="radio" value="Ok">
 
-            <label>Bummed!</label>
-            <input name="moodFieldset" type="radio" value="Bummed">
+                <label>Bummed!</label>
+                <input name="moodFieldset" type="radio" value="Bummed">
 
-            <label>Nihilistic!</label>
-            <input name="moodFieldset" type="radio" value="Nihilistic">
-        </fieldset>
+                <label>Nihilistic!</label>
+                <input name="moodFieldset" type="radio" value="Nihilistic">
+            </fieldset>
+            <fieldset id="search" class="search">
+                <legend>Search</legend>
+                <input id="searchBar" type="text" name="search">
+            </fieldset>
+        </div>
 
         <fieldset>
             <button type="button" id="submit--button">Emboss Eternity</button>
         </fieldset>
     </form>
+
 
     <article class="entryLog">
         <!-- printed entries appear here -->

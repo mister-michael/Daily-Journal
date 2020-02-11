@@ -21,6 +21,22 @@ const events = {
 
             })
     },
+    clearForm() {
+
+        const targetDateInput = document.getElementById("journalDate");
+        const targetConceptsInput = document.getElementById("conceptsCovered");
+        const targetJournalEntryInput = document.getElementById("journalEntry");
+        const targetMoodInput = document.getElementById("mood");
+
+        const hiddenEntryIdInput = document.getElementById("entryId")
+
+        hiddenEntryIdInput.value = ""
+        targetDateInput.value = ""
+        targetConceptsInput.value = ""
+        targetJournalEntryInput.value = ""
+        targetMoodInput.value = ""
+
+    },
     addSubmitListener() {
         //target submit button
 
@@ -49,6 +65,7 @@ const events = {
                     .then(() => {
                         API.getJournalEntries()
                             .then(renderHTML)
+                            .then(events.clearForm)
                     })
             } else {
                 if (targetDateInput.value === "") {
@@ -63,6 +80,7 @@ const events = {
                     // newJournalEntry is the object which will be posted to entries.json
                     //posts created entry to .json then re-print the entire dom from json which will include the new entry
                     API.saveJournalEntry(journalEntry).then(() => API.getJournalEntries().then(renderHTML))
+                        .then(events.clearForm)
 
                 }
             }
@@ -89,6 +107,33 @@ const events = {
                         renderHTML(entries.filter(element => element.mood === mood))
                     })
             })
+        })
+    },
+    searchFilter() {
+
+        const searchBar = document.querySelector("#searchBar");
+
+        searchBar.addEventListener("keypress", event => {
+
+            if (event.key === 'Enter') {
+
+                API.getJournalEntries()
+                    .then(entries => {
+                        const entryArray = []
+                        entries.forEach(entry => {
+                            const entryVals = Object.values(entry)
+                            const searchBarInput = searchBar.value
+
+                            for (const val of entryVals) {
+                                if (typeof val === 'string' && val.includes(searchBarInput) && !entryArray.includes(entry)) {
+                                    entryArray.push(entry)
+                                }
+                            }
+                            //look into break to break out of loop
+                        })
+                        renderHTML(entryArray)
+                    })
+            }
         })
     },
     addDeleteButtonListener() {
@@ -129,5 +174,4 @@ const events = {
         })
     }
 }
-
 export default events;
