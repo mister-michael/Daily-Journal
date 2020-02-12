@@ -3,13 +3,12 @@
 const makeHTML = (journalEntry) => {
     return `
    <h1>${journalEntry.concept}</h1>
-    <div>${journalEntry.date}</div>
-    <article>${journalEntry.content}</article>
-    <div>"${journalEntry.mood.mood}!"</div>
+    <div>Date: ${journalEntry.date}</div>
+    <article>Entry: ${journalEntry.content}</article>
+    <div>Mood: ${journalEntry.mood.mood}!</div>
+    <div>Instructor: ${journalEntry.instructor.firstName} ${journalEntry.instructor.lastName}</div>
     <button id="editButton--${journalEntry.id}" class="editButton">Edit</button>
     <button id="deleteButton--${journalEntry.id}" class="deleteButton">Delete</button>
-    
-
    `
 };
 

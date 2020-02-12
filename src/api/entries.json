@@ -5,6 +5,7 @@
       "concept": "2 covered javascript",
       "content": "2 Entry javascript",
       "moodId": 2,
+      "instructorId": 1,
       "id": 3
     },
     {
@@ -12,6 +13,7 @@
       "concept": "3 covered",
       "content": "3 Entry json",
       "moodId": 3,
+      "instructorId": 2,
       "id": 4
     },
     {
@@ -19,6 +21,7 @@
       "concept": "4 covered",
       "content": "4 Entry",
       "moodId": 4,
+      "instructorId": 1,
       "id": 5
     },
     {
@@ -26,6 +29,7 @@
       "concept": "5 covered",
       "content": "5 Entry",
       "moodId": 5,
+      "instructorId": 1,
       "id": 6
     },
     {
@@ -33,6 +37,7 @@
       "concept": "6 covered",
       "content": "6 Entry",
       "moodId": 5,
+      "instructorId": 3,
       "id": 7
     },
     {
@@ -40,6 +45,7 @@
       "concept": "7 covered",
       "content": "7 Entry",
       "moodId": 1,
+      "instructorId": 2,
       "id": 8
     },
     {
@@ -47,7 +53,16 @@
       "concept": "stuff",
       "content": "asasda",
       "moodId": 3,
+      "instructorId": 1,
       "id": 9
+    },
+    {
+      "date": "2020-02-12",
+      "concept": "stuff",
+      "content": "Copy the JSON from cars.json and assign it to a variable in a new application. This data holds sales information for a car dealership. Your job is to produce the following reports for the dealership based on their total 2017 sales.  Total profit for 2017 In which month did they sell the most cars? Which salesperson sold the most cars? Which salesperson made the most profit? Which model was the most popular? Which bank provided the most loans to our customers? In which month did zero cars get sold?",
+      "moodId": 2,
+      "instructorId": 2,
+      "id": 10
     }
   ],
   "moods": [
@@ -70,6 +85,23 @@
     {
       "id": 5,
       "mood": "Nihilistic!"
+    }
+  ],
+  "instructors": [
+    {
+      "id": 1,
+      "firstName": "Andy",
+      "lastName": "Collins"
+    },
+    {
+      "id": 2,
+      "firstName": "Kristen",
+      "lastName": "Norris"
+    },
+    {
+      "id": 3,
+      "firstName": "Bryan",
+      "lastName": "Nielsen"
     }
   ]
 }

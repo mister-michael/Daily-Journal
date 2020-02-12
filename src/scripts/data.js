@@ -1,5 +1,5 @@
 const baseUrl = "http://localhost:8088/entries";
-const urlExpanded = "http://localhost:8088/entries?_expand=mood";
+const urlExpanded = "http://localhost:8088/entries?_expand=instructor&&_expand=mood";
 
 const API = {
     getJournalEntries() {

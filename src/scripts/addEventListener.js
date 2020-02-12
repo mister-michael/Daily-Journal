@@ -49,15 +49,18 @@ const events = {
             const targetConceptsInput = document.getElementById("conceptsCovered");
             const targetJournalEntryInput = document.getElementById("journalEntry");
             const targetMoodInput = document.getElementById("mood");
+            const targetInstructorInput = document.getElementById("instructor")
 
             const hiddenEntryIdInput = document.getElementById("entryId")
             const moodIdCreator = parseInt(targetMoodInput.value)
             console.log(moodIdCreator, "moodIdCreator")
+            const instructorIdCreator = parseInt(targetInstructorInput.value)
             const journalEntry = {
                 "date": targetDateInput.value,
                 "concept": targetConceptsInput.value,
                 "content": targetJournalEntryInput.value,
-                "moodId": moodIdCreator
+                "moodId": moodIdCreator,
+                "instructorId": instructorIdCreator
             }
             //if else if conditional to alert if an entry field is left blank or run the api.savejournalentry method which posts to json and writes to dom
             if (hiddenEntryIdInput.value !== "") {
@@ -98,14 +101,14 @@ const events = {
             button.addEventListener("click", event => {
 
                 //define a variable to hold the value="" classification in the button's div
-                const mood = event.target.value;
+                const mood = parseInt(event.target.value);
 
                 //fetch the journal entries
                 API.getJournalEntries()
 
                     //then filter out the entries whose object.mood is equal to const mood
                     .then(entries => {
-                        renderHTML(entries.filter(element => element.mood === mood))
+                        renderHTML(entries.filter(element => element.mood.id === mood))
                     })
             })
         })
